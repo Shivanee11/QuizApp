@@ -33,19 +33,7 @@ An interactive quiz application with multiple categories, real-time timer, leade
 3. 🏁 At the end of the quiz, the score and leaderboard are shown.
 4. 🔄 User can restart the quiz from the beginning with a single button.
 
----
-## 📦 Run it Locally
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/Shivanee11/QuizApp.git
-
-## 🌐 Technologies Used
-
-- **Frontend**: React.js, CSS
-- **Backend**: Node.js, Express.js
-- **Data**: JSON or Open Trivia API
-- **State Management**: React Hooks
+--- 
 ## Project Structure
 
 QuizApp/
@@ -58,9 +46,19 @@ QuizApp/
 │ └── complete.png
 ├── README.md
 
-*Note: The project is complete with all core features implemented.*
-## 👩‍💻 Author
+### 1. Clone the repository
+```bash
+git clone https://github.com/Shivanee11/QuizApp.git
 
+## 🌐 Technologies Used
+- **Frontend**: React.js, CSS
+- **Backend**: Node.js, Express.js
+- **Data**: JSON or Open Trivia API
+- **State Management**: React Hooks
+
+*Note: The project is complete with all core features implemented.*
+
+## 👩‍💻 Author
 **Shivanee Rao**  
 🎓 B.Tech at KIIT University  
 💻 Frontend Developer  
