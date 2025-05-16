@@ -46,9 +46,6 @@ QuizApp/
 │ └── complete.png
 ├── README.md
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/Shivanee11/QuizApp.git
 
 ## 🌐 Technologies Used
 - **Frontend**: React.js, CSS
@@ -62,4 +59,8 @@ git clone https://github.com/Shivanee11/QuizApp.git
 **Shivanee Rao**  
 🎓 B.Tech at KIIT University  
 💻 Frontend Developer  
-🔗 [GitHub](https://github.com/Shivanee11)  
+🔗 [GitHub](https://github.com/Shivanee11)
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Shivanee11/QuizApp.git
