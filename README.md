@@ -34,18 +34,6 @@ An interactive quiz application with multiple categories, real-time timer, leade
 4. 🔄 User can restart the quiz from the beginning with a single button.
 
 --- 
-## Project Structure
-
-QuizApp/
-├── backend/
-├── frontend/
-├── screenshots/
-│ ├── welcome.png
-│ ├── quiz.png
-│ ├── quiz1.png
-│ └── complete.png
-├── README.md
-
 
 ## 🌐 Technologies Used
 - **Frontend**: React.js, CSS
@@ -61,6 +49,3 @@ QuizApp/
 💻 Frontend Developer  
 🔗 [GitHub](https://github.com/Shivanee11)
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/Shivanee11/QuizApp.git
