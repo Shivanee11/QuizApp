@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuizMaster - Choose Your Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Start Page -->
+  <section class="container" id="start-page">
+    <section class="hero">
+      <div class="hero-icon" aria-hidden="true">🧠</div>
+      <h1 class="hero-title">Welcome to the Ultimate Quiz Challenge!</h1>
+      <p class="hero-subtitle">
+        Test your knowledge across 10 exciting categories and 3 difficulty levels. Ready to get started?
+      </p>
+    </section>
+
+    <div class="quiz-form" aria-label="Quiz options form">
+      <label for="category">Select Category:</label>
+      <select id="category">
+        <option value="9">General Knowledge</option>
+        <option value="21">Sports</option>
+        <option value="23">History</option>
+        <option value="17">Science & Nature</option>
+        <option value="22">Geography</option>
+        <option value="18">Computers</option>
+        <option value="27">Animals</option>
+        <option value="28">Vehicles</option>
+        <option value="12">Music</option>
+        <option value="14">TV & Movies</option>
+      </select>
+
+      <label for="difficulty">Select Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button id="start-btn" class="btn-start">Start Quiz</button>
+    </div>
+  </section>
+
+  <!-- Quiz Container -->
+  <main class="container hide" id="quiz-container" aria-live="polite" aria-atomic="true">
+    <div id="question" class="question-text"></div>
+    <ul id="options" class="options-list"></ul>
+    <button id="next-btn" class="btn-next hide" aria-label="Next question">Next</button>
+  </main>
+
+  <!-- Result Container -->
+  <section class="container hide" id="result-container" role="region" aria-labelledby="result-title">
+    <h2 id="result-title" class="result-title">Quiz Completed!</h2>
+    <p id="score" class="result-score"></p>
+    <button id="restart-btn" class="btn-restart">Restart Quiz</button>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 QuizMaster. Challenge your mind every day!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
