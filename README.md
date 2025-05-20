@@ -19,8 +19,6 @@ Just open the `index.html` (or `app.html`) file in any modern browser to play th
 
 ## Preview
 ![Screenshot](screenshot.png) <!-- Optional, if you have a screenshot -->
-
-## Author
 ## Author
 
 👩‍💻 **Shivanee Rao**  
