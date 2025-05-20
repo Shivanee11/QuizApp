@@ -17,7 +17,7 @@ A simple and stylish quiz app built using basic **HTML** and **CSS**.
 ## Getting Started
 Just open the `index.html` (or `app.html`) file in any modern browser to play the quiz.
 
-## Preview
+## 🖼️ App Preview
 ![Screenshot](Screenshot%202025-05-20%20180138.png)
 ![Screenshot](Screenshot%202025-05-20%20180206.png)
 ![Screenshot](Screenshot%202025-05-20%20180413.png)
