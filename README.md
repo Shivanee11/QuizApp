@@ -18,11 +18,12 @@ A simple and stylish quiz app built using basic **HTML** and **CSS**.
 Just open the `index.html` (or `app.html`) file in any modern browser to play the quiz.
 
 ## Preview
-![Screenshot]("Screenshot 2025-05-20 180138.png")
-![Screenshot]("Screenshot 2025-05-20 180206.png")
-![Screenshot]("Screenshot 2025-05-20 180413.png")
-![Screenshot]("Screenshot 2025-05-20 180517.png")
-![Screenshot]("Screenshot 2025-05-20 181032.png") 
+![Screenshot](Screenshot%202025-05-20%20180138.png)
+![Screenshot](Screenshot%202025-05-20%20180206.png)
+![Screenshot](Screenshot%202025-05-20%20180413.png)
+![Screenshot](Screenshot%202025-05-20%20180517.png)
+![Screenshot](Screenshot%202025-05-20%20181032.png)
+
 ## Author
 
 👩‍💻 **Shivanee Rao**  
