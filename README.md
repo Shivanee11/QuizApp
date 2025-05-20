@@ -1,4 +1,4 @@
-## Quiz App
+# **Quiz App**
 
 A simple and stylish quiz app built using HTML, CSS, and JavaScript.  
 Users can choose categories, answer timed questions, and view their final score.  
