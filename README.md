@@ -29,4 +29,4 @@ Just open the `index.html` (or `app.html`) file in any modern browser to play th
 👩‍💻 **Shivanee Rao**  
 🎓 B.Tech CSE Student at KIIT University, Bhubaneswar (6th Semester)  
 💡 Passionate about building intuitive web applications and diving deep into data analytics  
-🌐 [GitHub Portfolio](https://github.com/Shivanee11)
+🌐 GitHub: https://github.com/Shivanee11
