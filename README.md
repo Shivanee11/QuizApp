@@ -2,18 +2,6 @@
 
 A simple and stylish quiz app built using basic **HTML** and **CSS**.
 
-## Features
-- 3 Categories (e.g., General Knowledge, Science, Computers)
-- 5 Questions per category
-- Difficulty Levels (Easy, Medium, Hard)
-- Countdown Timer per question
-- Final Score Summary
-
-## Timer Logic
-- Easy: 10 seconds/question
-- Medium: 15 seconds/question
-- Hard: 20 seconds/question
-
 ## Getting Started
 Just open the `index.html` (or `app.html`) file in any modern browser to play the quiz.
 
@@ -24,8 +12,27 @@ Just open the `index.html` (or `app.html`) file in any modern browser to play th
 ![Screenshot](Screenshot%202025-05-20%20180517.png)
 ![Screenshot](Screenshot%202025-05-20%20181032.png)
 
-## Author
+## 🚀 **Features**
+- Sleek and responsive UI using HTML, CSS, and JavaScript
+- Supports 3 quiz categories: General Knowledge, Science, and Computers
+- Difficulty levels: Easy, Medium, Hard
+- Timer-based questions with automatic move to the next one
+- Score summary screen with replay option
 
+## 🧠 **How it Works**
+🎬 Users start by selecting a quiz category and difficulty level
+🧩 A set of questions is fetched from a local dataset based on the selection
+⏱️ Each question has a countdown timer (10s for easy, 15s for medium, 20s for hard)
+🧮 Score is calculated in real-time as per correct answers
+🏁 At the end, the user sees their final score and can restart the quiz anytime
+
+## 📦 **Run it Locally**
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/Shivanee11/QuizApp.git
+
+## 👩‍💻 **Author**
 👩‍💻 **Shivanee Rao**  
 🎓 B.Tech CSE Student at KIIT University, Bhubaneswar (6th Semester)  
 💡 Passionate about building intuitive web applications and diving deep into data analytics  
