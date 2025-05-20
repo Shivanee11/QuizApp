@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 600px;
+      background: #fff;
+      padding: 30px;
+      margin: 40px 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #D14D74;
+    }
+
+    .start-screen, .quiz-screen, .result-screen {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .question {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .option {
+      background: #fbe6ed;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .option:hover {
+      border-color: #D14D74;
+      background: #ffeef3;
+    }
+
+    button {
+      background-color: #D14D74;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #b03b60;
+    }
+
+    #timer {
+      margin: 10px 0;
+      font-weight: bold;
+      color: #D14D74;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Start Screen -->
+    <div class="start-screen active">
+      <h1>Welcome to the Quiz!</h1>
+      <label>Choose Category:</label>
+      <select id="category">
+        <option value="General">General Knowledge</option>
+        <option value="Science">Science</option>
+        <option value="Computers">Computers</option>
+      </select>
+      <br><br>
+      <label>Choose Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <br><br>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div class="quiz-screen">
+      <div id="timer">Time Left: <span id="time">10</span> seconds</div>
+      <h2 id="question"></h2>
+      <div id="options"></div>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div class="result-screen">
+      <h2>Quiz Completed!</h2>
+      <p id="score"></p>
+      <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script>
+    const quizData = {
+      General: [
+        { q: "What is the capital of India?", options: ["Delhi", "Mumbai", "Kolkata", "Chennai"], answer: "Delhi" },
+        { q: "How many continents are there?", options: ["5", "6", "7", "8"], answer: "7" },
+        { q: "Which color is on the Indian flag?", options: ["Pink", "Green", "Purple", "Black"], answer: "Green" },
+        { q: "Who wrote the national anthem?", options: ["Gandhi", "Rabindranath Tagore", "Nehru", "Bose"], answer: "Rabindranath Tagore" },
+        { q: "Largest river in India?", options: ["Yamuna", "Ganga", "Krishna", "Godavari"], answer: "Ganga" }
+      ],
+      Science: [
+        { q: "Water freezes at?", options: ["0°C", "100°C", "10°C", "50°C"], answer: "0°C" },
+        { q: "Planet known as Red Planet?", options: ["Mars", "Earth", "Venus", "Jupiter"], answer: "Mars" },
+        { q: "Human blood is?", options: ["Blue", "Red", "Green", "Purple"], answer: "Red" },
+        { q: "We breathe in?", options: ["Oxygen", "Carbon", "Nitrogen", "Hydrogen"], answer: "Oxygen" },
+        { q: "Boiling point of water?", options: ["100°C", "120°C", "80°C", "60°C"], answer: "100°C" }
+      ],
+      Computers: [
+        { q: "HTML stands for?", options: ["Hyper Text", "Hot Mail", "How To Make Login", "None"], answer: "Hyper Text" },
+        { q: "CPU is?", options: ["Central Unit", "Processor", "Central Processing Unit", "Computer Personal Unit"], answer: "Central Processing Unit" },
+        { q: "Which is a programming language?", options: ["HTML", "Python", "HTTP", "USB"], answer: "Python" },
+        { q: "Storage device?", options: ["RAM", "Hard Disk", "Monitor", "Mouse"], answer: "Hard Disk" },
+        { q: "RAM is?", options: ["Read Access", "Read Only", "Random Access Memory", "Run All Memory"], answer: "Random Access Memory" }
+      ]
+    };
+
+    let currentQuestion = 0;
+    let selectedCategory = "General";
+    let score = 0;
+    let timer;
+    let timeLeft = 10;
+    let currentQuiz = [];
+    let selectedDifficulty = "easy";
+
+    function getTimeByDifficulty(difficulty) {
+      if (difficulty === "easy") return 10;
+      if (difficulty === "medium") return 15;
+      if (difficulty === "hard") return 20;
+    }
+
+    function startQuiz() {
+      selectedCategory = document.getElementById("category").value;
+      selectedDifficulty = document.getElementById("difficulty").value;
+
+      currentQuiz = quizData[selectedCategory];
+      currentQuestion = 0;
+      score = 0;
+      timeLeft = getTimeByDifficulty(selectedDifficulty);
+
+      document.querySelector(".start-screen").classList.remove("active");
+      document.querySelector(".quiz-screen").classList.add("active");
+
+      startTimer();
+      showQuestion();
+    }
+
+    function startTimer() {
+      document.getElementById("time").textContent = timeLeft;
+      clearInterval(timer);
+      timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("time").textContent = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          nextQuestion();
+        }
+      }, 1000);
+    }
+
+    function showQuestion() {
+      const questionObj = currentQuiz[currentQuestion];
+      document.getElementById("question").textContent = questionObj.q;
+
+      const optionsContainer = document.getElementById("options");
+      optionsContainer.innerHTML = "";
+
+      questionObj.options.forEach(option => {
+        const div = document.createElement("div");
+        div.classList.add("option");
+        div.textContent = option;
+        div.onclick = () => {
+          if (option === questionObj.answer) score++;
+          nextQuestion();
+        };
+        optionsContainer.appendChild(div);
+      });
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < currentQuiz.length) {
+        timeLeft = getTimeByDifficulty(selectedDifficulty);
+        startTimer();
+        showQuestion();
+      } else {
+        submitQuiz();
+      }
+    }
+
+    function submitQuiz() {
+      clearInterval(timer);
+      document.querySelector(".quiz-screen").classList.remove("active");
+      document.querySelector(".result-screen").classList.add("active");
+      document.getElementById("score").textContent = `You scored ${score} out of ${currentQuiz.length}`;
+    }
+
+    function restartQuiz() {
+      document.querySelector(".result-screen").classList.remove("active");
+      document.querySelector(".start-screen").classList.add("active");
+    }
+  </script>
+</body>
+</html>
