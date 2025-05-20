@@ -20,11 +20,12 @@ Just open the `index.html` (or `app.html`) file in any modern browser to play th
 - Score summary screen with replay option
 
 ## 🧠 **How it Works**
--🎬 Users start by selecting a quiz category and difficulty level
--🧩 A set of questions is fetched from a local dataset based on the selection
--⏱️ Each question has a countdown timer (10s for easy, 15s for medium, 20s for hard)
--🧮 Score is calculated in real-time as per correct answers
--🏁 At the end, the user sees their final score and can restart the quiz anytime
+- 🎬 Users start by selecting a quiz category and difficulty level  
+- 🧩 A set of questions is fetched from a local dataset based on the selection  
+- ⏱️ Each question has a countdown timer (10s for easy, 15s for medium, 20s for hard)  
+- 🧮 Score is calculated in real-time as per correct answers  
+- 🏁 At the end, the user sees their final score and can restart the quiz anytime  
+
 
 ## 📦 **Run it Locally**
 
